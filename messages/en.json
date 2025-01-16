@@ -1,0 +1,16 @@
+{
+  "global": {
+    "name": "Elytra Linux",
+    "download": "Download"
+  },
+  "home": {
+    "hero": {
+      "title": "Elytra Linux",
+      "description": "A modern, lightweight Linux distribution focused on simplicity and user experience."
+    },
+    "features": {
+      "title": "Built for the Modern World",
+      "subText": "Experience Linux like never before with our innovative features and modern approach."
+    }
+  }
+} 
