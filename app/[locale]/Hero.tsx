@@ -98,20 +98,17 @@ const Hero = () => {
                 Download Elytra
               </Button>
             </Link>
-            <Link href="/docs">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="relative px-8 py-3 bg-[#0A0F1E] text-gray-300 font-medium rounded-lg border border-gray-800
-                  transform hover:-translate-y-1 transition-all duration-200
-                  before:absolute before:inset-0 before:bg-gray-900 before:-z-10 before:translate-y-[4px] before:rounded-lg
-                  hover:before:translate-y-1
-                  active:translate-y-0.5 active:before:translate-y-0
-                  shadow-xl shadow-black/20"
-              >
-                Learn More
-              </Button>
-            </Link>
+            <button
+              onClick={() => {
+                document.getElementById('tools')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+              className="text-gray-300 hover:text-white px-6 py-2 rounded-lg border border-gray-700 hover:border-gray-600 transition-colors"
+            >
+              Learn More
+            </button>
           </div>
 
           {/* Framework Cards */}
@@ -278,7 +275,7 @@ const Hero = () => {
           </div>
 
           {/* Pre-installed Tools Section */}
-          <div className="mt-24 text-center max-w-[1400px] mx-auto">
+          <div id="tools" className="mt-24 text-center max-w-[1400px] mx-auto">
             <h2 className={`${jetbrains.className} text-3xl font-bold text-white mb-8`}>
               Pre-installed AI Development Stack
             </h2>
