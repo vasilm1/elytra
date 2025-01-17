@@ -5,7 +5,11 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
 import { cn } from "@/lib/utils"
 
-const TooltipProvider = ({ children, ...props }) => (
+interface TooltipProviderProps extends React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Provider> {
+  children: React.ReactNode;
+}
+
+const TooltipProvider = ({ children, ...props }: TooltipProviderProps) => (
   <TooltipPrimitive.Provider {...props}>
     <TooltipPrimitive.Root>
       {children}

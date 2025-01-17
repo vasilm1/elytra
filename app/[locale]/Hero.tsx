@@ -12,6 +12,8 @@ import {
   Settings as NodeIcon 
 } from 'lucide-react';
 import { JetBrains_Mono } from 'next/font/google';
+import NeuralPulse from "../../components/NeuralPulse";
+import LogoScroll from "../../components/LogoScroll";
 
 const jetbrains = JetBrains_Mono({ subsets: ['latin'] });
 
@@ -22,6 +24,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Darker, more professional gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E] via-[#0F1629] to-[#141B32]" />
+        <NeuralPulse />
         
         {/* More subtle glow effects */}
         <div className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full bg-blue-500/5 blur-[120px]" />
@@ -241,6 +244,10 @@ const Hero = () => {
             </div>
           </div>
 
+          <div className="mt-16">
+            <LogoScroll />
+          </div>
+
           {/* Description Section */}
           <div className="mt-16 text-center max-w-4xl mx-auto">
             <h2 className={`${jetbrains.className} text-3xl font-bold text-white mb-6`}>
@@ -271,23 +278,23 @@ const Hero = () => {
           </div>
 
           {/* Pre-installed Tools Section */}
-          <div className="mt-24 text-center max-w-6xl mx-auto">
+          <div className="mt-24 text-center max-w-[1400px] mx-auto">
             <h2 className={`${jetbrains.className} text-3xl font-bold text-white mb-8`}>
               Pre-installed AI Development Stack
             </h2>
             
             {/* Tools Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 -mx-12 lg:-mx-32 xl:-mx-48">
               {/* ML/DL Frameworks */}
-              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all
+              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-10 border border-gray-800 transition-all
                 hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/10">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="p-3 bg-blue-500/10 rounded-lg">
-                    <BrainCircuit className="w-8 h-8 text-blue-400" />
+                <div className="flex items-start gap-8">
+                  <div className="p-4 bg-blue-500/10 rounded-lg flex-shrink-0">
+                    <BrainCircuit className="w-10 h-10 text-blue-400" />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-white mb-3">ML/DL Frameworks</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                  <div className="text-left flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">ML/DL Frameworks</h3>
+                    <p className="text-gray-400 text-base leading-relaxed">
                       PyTorch, TensorFlow, JAX, Scikit-learn, XGBoost, and more for all your machine learning needs.
                     </p>
                   </div>
@@ -295,15 +302,15 @@ const Hero = () => {
               </div>
 
               {/* LLM Tools */}
-              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all
+              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-10 border border-gray-800 transition-all
                 hover:border-purple-500/20 hover:shadow-lg hover:shadow-purple-500/10">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="p-3 bg-purple-500/10 rounded-lg">
-                    <Cpu className="w-8 h-8 text-purple-400" />
+                <div className="flex items-start gap-8">
+                  <div className="p-4 bg-purple-500/10 rounded-lg flex-shrink-0">
+                    <Cpu className="w-10 h-10 text-purple-400" />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-white mb-3">LLM Tools</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                  <div className="text-left flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">LLM Tools</h3>
+                    <p className="text-gray-400 text-base leading-relaxed">
                       LangChain, LlamaIndex, Hugging Face Transformers, vLLM, and AutoGPT for advanced language models.
                     </p>
                   </div>
@@ -311,15 +318,15 @@ const Hero = () => {
               </div>
 
               {/* Agent Frameworks */}
-              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all
+              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-10 border border-gray-800 transition-all
                 hover:border-green-500/20 hover:shadow-lg hover:shadow-green-500/10">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="p-3 bg-green-500/10 rounded-lg">
-                    <Blocks className="w-8 h-8 text-green-400" />
+                <div className="flex items-start gap-8">
+                  <div className="p-4 bg-green-500/10 rounded-lg flex-shrink-0">
+                    <Blocks className="w-10 h-10 text-green-400" />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-white mb-3">Agent Frameworks</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                  <div className="text-left flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">Agent Frameworks</h3>
+                    <p className="text-gray-400 text-base leading-relaxed">
                       SwarmNode, ElizaOS, Rig Framework, CrewAI, and AutoGen for building autonomous agents.
                     </p>
                   </div>
@@ -327,15 +334,15 @@ const Hero = () => {
               </div>
 
               {/* Data Science */}
-              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all
+              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-10 border border-gray-800 transition-all
                 hover:border-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/10">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="p-3 bg-indigo-500/10 rounded-lg">
-                    <PythonIcon className="w-8 h-8 text-indigo-400" />
+                <div className="flex items-start gap-8">
+                  <div className="p-4 bg-indigo-500/10 rounded-lg flex-shrink-0">
+                    <PythonIcon className="w-10 h-10 text-indigo-400" />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-white mb-3">Data Science</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                  <div className="text-left flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">Data Science</h3>
+                    <p className="text-gray-400 text-base leading-relaxed">
                       NumPy, Pandas, Jupyter Lab, Matplotlib, Dask, and DuckDB for data processing and visualization.
                     </p>
                   </div>
@@ -343,15 +350,15 @@ const Hero = () => {
               </div>
 
               {/* Development Tools */}
-              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all
+              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-10 border border-gray-800 transition-all
                 hover:border-orange-500/20 hover:shadow-lg hover:shadow-orange-500/10">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="p-3 bg-orange-500/10 rounded-lg">
-                    <RustIcon className="w-8 h-8 text-orange-400" />
+                <div className="flex items-start gap-8">
+                  <div className="p-4 bg-orange-500/10 rounded-lg flex-shrink-0">
+                    <RustIcon className="w-10 h-10 text-orange-400" />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-white mb-3">Development Tools</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                  <div className="text-left flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">Development Tools</h3>
+                    <p className="text-gray-400 text-base leading-relaxed">
                       VSCode, Git, Docker, Kubernetes, CUDA Toolkit, and MLflow for seamless development.
                     </p>
                   </div>
@@ -359,15 +366,15 @@ const Hero = () => {
               </div>
 
               {/* Optimization Tools */}
-              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all
+              <div className="group bg-gray-900/50 hover:bg-gray-900/70 backdrop-blur-sm rounded-xl p-10 border border-gray-800 transition-all
                 hover:border-red-500/20 hover:shadow-lg hover:shadow-red-500/10">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="p-3 bg-red-500/10 rounded-lg">
-                    <NodeIcon className="w-8 h-8 text-red-400" />
+                <div className="flex items-start gap-8">
+                  <div className="p-4 bg-red-500/10 rounded-lg flex-shrink-0">
+                    <NodeIcon className="w-10 h-10 text-red-400" />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-white mb-3">Optimization Tools</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                  <div className="text-left flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">Optimization Tools</h3>
+                    <p className="text-gray-400 text-base leading-relaxed">
                       TensorRT, OpenVINO, Triton Server, Ray, and NVIDIA tools for maximum performance.
                     </p>
                   </div>
