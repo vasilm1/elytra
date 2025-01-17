@@ -2,10 +2,23 @@
 
 import { useEffect, useRef } from 'react';
 
+interface Node {
+  x: number;
+  y: number;
+  connections: number[];
+  pulseIntensity: number;
+}
+
+interface Pulse {
+  sourceNode: number;
+  targetNode: number;
+  progress: number;
+}
+
 const NeuralPulse = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
-  const nodesRef = useRef<any[]>([]);
+  const nodesRef = useRef<Node[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -60,7 +73,7 @@ const NeuralPulse = () => {
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
 
-    let activePulses: { sourceNode: number; targetNode: number; progress: number }[] = [];
+    let activePulses: Pulse[] = [];
     let lastTime = 0;
 
     const animate = (currentTime: number) => {
@@ -76,7 +89,7 @@ const NeuralPulse = () => {
       // Random pulse generation
       if (Math.random() < 0.03) {
         const sourceNode = Math.floor(Math.random() * nodesRef.current.length);
-        nodesRef.current[sourceNode].connections.forEach(targetNode => {
+        nodesRef.current[sourceNode].connections.forEach((targetNode: number) => {
           activePulses.push({
             sourceNode,
             targetNode,
